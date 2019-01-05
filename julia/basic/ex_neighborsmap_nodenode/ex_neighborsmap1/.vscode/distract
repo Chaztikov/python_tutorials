@@ -1,0 +1,151 @@
+sum = 0;
+std::for_each(vec.begin(), vec.end(), [&sum](int i) { sum += i; });
+
+
+
+
+// void write_libmesh_info(EquationSystems &equation_systems)
+// {
+
+//     const MeshBase &mesh = equation_systems.get_mesh();
+//     const unsigned int ndimensions = mesh.mesh_dimension();
+//     ExplicitSystem &system =
+//         equation_systems.get_system<ExplicitSystem>("system");
+//     const DofMap &dof_map = system.get_dof_map();
+//     auto n_dofs_total = dof_map.n_dofs();
+//     auto nelem = mesh.n_active_elem();
+//     // AnalyticFunction<Number> exact_solution_object(exact_solution);
+
+//     FEType fe_type = system.variable_type(0);
+
+//     // auto& exact = system.get_vector("exact");
+//     // auto& approx = system.get_vector("approx");
+//     // auto& error = system.get_vector("error");
+
+//     std::unique_ptr<NumericVector<Number>> centroid_values =
+//         system.solution->zero_clone();
+
+//     std::unique_ptr<FEBase> fe(FEBase::build(ndimensions, FEType(p_order, fe_family)));
+//     std::unique_ptr<QBase> qrule(QBase::build(QGAUSS, ndimensions, quad_order));
+//     fe->attach_quadrature_rule(qrule.get());
+
+//     const std::vector<Real> &JxW = fe->get_JxW();
+//     const std::vector<Point> &qpoint = fe->get_xyz();
+//     const std::vector<std::vector<Real>> &phi = fe->get_phi();
+//     std::cout << "\n qrule->quad_order() " << qrule->get_order();
+
+//     std::unique_ptr<FEBase> fe_face(FEBase::build(ndimensions , FEType(p_order, fe_family)));
+//     std::unique_ptr<QBase> qface(QBase::build(QTRAP, ndimensions - 1, quad_order));
+//     fe_face->attach_quadrature_rule(qface.get());
+
+//     const std::vector<Real> &JxW_face = fe_face->get_JxW();
+//     const std::vector<Point> &qpoint_face = fe_face->get_xyz();
+//     const std::vector<std::vector<Real>> &phi_face = fe_face->get_phi();
+//     std::cout << "\n qrule->quad_order() " << qface->get_order();
+
+//     std::unique_ptr<NumericVector<Number>> scalarfield_elem =
+//         NumericVector<Number>::build(mesh.comm());
+//     scalarfield_elem->init(nelem, false, SERIAL);
+
+//     std::unique_ptr<NumericVector<Number>> exact_scalarfield_elem = scalarfield_elem->zero_clone();
+
+//     std::unique_ptr<NumericVector<Number>> scalarfield_node = system.solution->zero_clone();
+
+//     // std::vector<Number> scalarfield_elem(mesh.n_elem());
+//     // std::vector<Number> exact_scalarfield_elem(mesh.n_elem());
+
+//     // auto elemval = scalarfield_elem.begin();
+//     // auto elemval_exact = exact_scalarfield_elem.begin();
+
+// 	std::stringstream sstm;
+// 	// sstm << "_" << nelem << horizon;
+//     std::string savename = sstm.str();
+
+//     std::ofstream outfile_elem;
+//     outfile_elem.open(savename + "elem_values.e", std::ios_base::app);
+
+//     std::ofstream outfile_qtrapside;
+//     outfile_qtrapside.open(savename + "qtrap_side.e", std::ios_base::app);
+
+//     std::ofstream outfile_qpoints;
+//     std::ofstream outfile_qgausselem;
+
+//     outfile_qgausselem.open(savename + "qgauss_elem.e", std::ios_base::app);
+
+//     DenseMatrix<Number> Ke;
+//     DenseVector<Number> Fe;
+//     // DenseVector<Number> Fexact;
+//     std::vector<dof_id_type> dof_indices;
+//     std::vector<dof_id_type> one_dof_index(1);
+
+//     // for (auto elem : mesh.element_ptr_range())
+//     for (auto elem : mesh.element_ptr_range())
+
+//     {
+//         Real elemval_exact=0;
+//         Real elemval=0;
+
+//         dof_map.dof_indices(elem, dof_indices);
+//         const unsigned int n_dofs = dof_indices.size();
+//         Fe.zero();
+//         Fe.resize(n_dofs);
+//         fe->reinit(elem);
+
+//         for (auto side : elem->side_index_range())
+//         {
+
+//             fe_face->reinit( elem , side );
+
+//             for (auto qp : range(qface->n_points()))
+//                 for(auto i : range(3))
+//                     outfile_qtrapside <<  qpoint_face[qp](i) << " ";
+//         }
+//             outfile_qtrapside << " \n ";
+
+//         for (auto qp : range(qrule->n_points()))
+//             for(auto i : range(3))
+//                 outfile_qgausselem <<  qpoint[qp](i) << " ";
+//         outfile_qgausselem << " \n ";
+
+//         Real JxWkernelsum = 0;
+
+//         const Point &point_elem = elem->centroid();
+
+//         for (auto qp : range(qrule->n_points()))
+//         {
+//             const Point &xi((point_elem - qpoint[qp]));
+
+//             Real kernelval = 0;
+//             kernelval += kernel(xi);
+//             JxWkernelsum += JxW[qp] * kernelval;
+
+//             elemval += JxW[qp] * kernelval * exact_solution(qpoint[qp], equation_systems.parameters, std::string(), std::string());
+
+//             for (auto i : range(n_dofs))
+//                 Fe(i) += JxW[qp] * phi[i][qp] * exact_solution(qpoint[qp], equation_systems.parameters, std::string(), std::string()) * kernelval;
+//         }
+
+//         elemval /= JxWkernelsum;
+//         Fe.scale(JxWkernelsum);
+
+//         elemval_exact += exact_solution( point_elem, equation_systems.parameters, std::string(),std::string());
+
+//         for(auto i : range(3))
+//             outfile_elem << point_elem(i) << " ";
+//          outfile_elem << elemval << " " << elemval_exact;
+//          outfile_elem << " \n ";
+
+//         dof_map.constrain_element_vector(Fe, dof_indices);
+
+//         scalarfield_node->add_vector(Fe, dof_indices);
+
+//     }
+
+//     {
+//         std::ofstream outfile;
+//         outfile.open("scalarfield_node.e", std::ios_base::app);
+//         scalarfield_node->print(outfile);
+//     }
+
+//     return scalarfield_node;
+// }

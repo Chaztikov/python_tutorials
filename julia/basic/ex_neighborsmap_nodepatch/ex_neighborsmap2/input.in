@@ -1,0 +1,119 @@
+nelem_div_horizon = 1
+
+nelem=16
+
+ndimensions = 2;
+
+horizon_boundary_width=2
+
+elem_type = QUAD4;
+
+quad_type = 4;
+
+kernel_order = 1
+
+quad_order = 4;
+
+p_order = 1
+
+fe_family = LAGRANGE;
+
+
+
+
+enum QuadratureType : int {
+QGAUSS            = 0,
+QJACOBI_1_0       = 1,
+QJACOBI_2_0       = 2,
+QSIMPSON          = 3,
+QTRAP             = 4,
+QGRID             = 5,
+QGRUNDMANN_MOLLER = 6,
+QMONOMIAL         = 7,
+QCONICAL          = 8,
+QGAUSS_LOBATTO    = 9,
+QCLOUGH           = 21,
+QCOMPOSITE        = 31,
+// Invalid
+INVALID_Q_RULE    = 127};
+
+
+// // C0
+// LAGRANGE     = 0,
+// HIERARCHIC   = 1,
+// // discontinuous, in local coordinates
+// MONOMIAL      = 2,
+// L2_HIERARCHIC = 6,
+// L2_LAGRANGE   = 7,
+// // higher-order
+// BERNSTEIN    = 3,
+// SZABAB       = 4,
+// // discontinuous, in global coordinates
+// XYZ          = 5,
+// // infinite element stuff
+// INFINITE_MAP = 11,     //   for 1/r-map
+// JACOBI_20_00 = 12,     //   i_max = 19
+// JACOBI_30_00 = 13,     //   i_max = 19
+// LEGENDRE     = 14,     //   i_max = 19
+// // C1 elements
+// CLOUGH       = 21,
+// HERMITE      = 22,
+// SUBDIVISION  = 23,
+// // A scalar variable that couples to
+// // all other DOFs in the system
+// SCALAR       = 31,
+// // Vector-valued elements
+// LAGRANGE_VEC = 41,
+// NEDELEC_ONE  = 42,
+
+
+
+
+  //  30               {EDGE2=0,         // 0
+  //  31                EDGE3,           // 1
+  //  32                EDGE4,           // 2
+  //  33 
+  //  34                TRI3,            // 3
+  //  35                TRI6,            // 4
+  //  36 
+  //  37                QUAD4,           // 5
+  //  38                QUAD8,           // 6
+  //  39                QUAD9,           // 7
+  //  40 
+  //  41                TET4,            // 8
+  //  42                TET10,           // 9
+  //  43 
+  //  44                HEX8,            // 10
+  //  45                HEX20,           // 11
+  //  46                HEX27,           // 12
+  //  47 
+  //  48                PRISM6,          // 13
+  //  49                PRISM15,         // 14
+  //  50                PRISM18,         // 15
+  //  51 
+  //  52                PYRAMID5,        // 16
+  //  53                PYRAMID13,       // 17
+  //  54                PYRAMID14,       // 18
+  //  55 
+  //  56                INFEDGE2,        // 19
+  //  57 
+  //  58                INFQUAD4,        // 20
+  //  59                INFQUAD6,        // 21
+  //  60 
+  //  61                INFHEX8,         // 22
+  //  62                INFHEX16,        // 23
+  //  63                INFHEX18,        // 24
+  //  64 
+  //  65                INFPRISM6,       // 25
+  //  66                INFPRISM12,      // 26
+  //  67 
+  //  68                NODEELEM,        // 27
+  //  69 
+  //  70                REMOTEELEM,      // 28
+  //  71 
+  //  72                TRI3SUBDIVISION, // 29
+  //  73                TRISHELL3,       // 30
+  //  74                QUADSHELL4,      // 31
+  //  75                QUADSHELL8,      // 32
+  //  76 
+  //  77                INVALID_ELEM};   // 33 - should always be last

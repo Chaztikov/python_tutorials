@@ -1,0 +1,9 @@
+nelem_div_horizon=1.
+nelem=5
+ndimensions = 2;
+horizon_boundary_width=1
+elem_type = QUAD4;
+quad_type = QGAUSS;
+quad_order = FIFTH;
+p_order = FIRST;
+fe_family = LAGRANGE;

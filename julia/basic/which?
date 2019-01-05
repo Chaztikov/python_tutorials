@@ -1,0 +1,44 @@
+
+ex_functionbase:
+total 112
+-rw-r--r-- 1 chaztikov chaztikov 12063 Dec  6 14:27 helpers.C
+-rw-r--r-- 1 chaztikov chaztikov 22487 Dec  6 03:22 main.C
+-rw-r--r-- 1 chaztikov chaztikov   168 Dec  6 00:52 input.in
+-rw-r--r-- 1 chaztikov chaztikov  1402 Dec  4 13:32 ErrorFunction.h
+-rw-r--r-- 1 chaztikov chaztikov  2194 Dec  4 11:45 Makefile
+-rw-r--r-- 1 chaztikov chaztikov  1279 Dec  3 06:52 ld_unable_find_lpetsc_erros.log
+-rw-r--r-- 1 chaztikov chaztikov  1279 Dec  3 06:51 clang_erros.log
+-rw-r--r-- 1 chaztikov chaztikov     0 Dec  1 16:01 gcc_opts
+-rw-r--r-- 1 chaztikov chaztikov  2324 Dec  1 14:25 Makefile-7
+-rw-r--r-- 1 chaztikov chaztikov  7321 Dec  1 14:10 helpers.h
+-rw-r--r-- 1 chaztikov chaztikov  3396 Nov 30 21:32 MeshlessInterpolationFunction.h
+-rw-r--r-- 1 chaztikov chaztikov 26259 Nov 30 21:29 femparameters.C
+-rw-r--r-- 1 chaztikov chaztikov  4284 Nov 30 21:29 femparameters.h
+-rwxr-xr-x 1 chaztikov chaztikov   292 Nov 30 21:29 gitremaddcommitpush.sh
+
+
+ex_neighborsmap_nodepatch:
+total 44
+drwxr-xr-x 7 chaztikov chaztikov  4096 Dec 10 17:33 ex_neighborsmap2
+-rw-r--r-- 1 chaztikov chaztikov 39116 Dec  7 11:50 ex_neighborsmap2.zip
+
+ex_neighborsmap_nodenode:
+total 24
+drwxr-xr-x 6 chaztikov chaztikov 4096 Dec 10 17:33 ex_neighborsmap1
+drwxr-xr-x 5 chaztikov chaztikov 4096 Dec 10 17:33 ex_neighborsmap
+drwxr-xr-x 5 chaztikov chaztikov 4096 Dec 10 17:33 ex_neighborsmap_0.5
+drwxr-xr-x 7 chaztikov chaztikov 4096 Dec 10 17:33 ex_neighborsmap2
+drwxrwxr-x 2 chaztikov chaztikov 4096 Dec  7 10:42 ex_nodenode
+drwxr-xr-x 5 chaztikov chaztikov 4096 Dec  6 03:19 ex_neighborsmap_functionbase
+
+ex_bind2:
+total 88
+-rw-r--r-- 1 chaztikov chaztikov 26259 Dec  4 11:18 femparameters.C
+-rw-r--r-- 1 chaztikov chaztikov  4284 Dec  4 11:18 femparameters.h
+-rw-r--r-- 1 chaztikov chaztikov     0 Dec  4 11:18 gcc_opts
+-rwxr-xr-x 1 chaztikov chaztikov   292 Dec  4 11:18 gitremaddcommitpush.sh
+-rw-r--r-- 1 chaztikov chaztikov 12045 Dec  4 11:18 helpers.C
+-rw-r--r-- 1 chaztikov chaztikov  7321 Dec  4 11:18 helpers.h
+-rw-r--r-- 1 chaztikov chaztikov 17400 Dec  4 11:18 main.C
+-rw-r--r-- 1 chaztikov chaztikov  2196 Dec  4 11:18 Makefile
+-rw-r--r-- 1 chaztikov chaztikov  3396 Dec  4 11:18 MeshlessInterpolationFunction.h

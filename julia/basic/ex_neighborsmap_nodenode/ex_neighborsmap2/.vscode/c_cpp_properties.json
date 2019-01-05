@@ -1,0 +1,50 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/usr/include",
+                "/usr/local/include",
+                "/usr/include/linux/",
+                "/usr/include/x86_64-linux-gnu/",
+                "/usr/include/x86_64-linux-gnu/c++/8/",
+                "/usr/include/eigen3/**",
+                "/usr/include/c++/8/",
+                "/usr/include/llvm-8/llvm/",
+                "/usr/include/llvm-c-8/llvm-c/",
+                "${INCLUDE}",
+                "${LIBMESH}/",
+                "${LIBMESH}/**",
+                "${LIBMESH}/**/**",
+                "${LIBMESH}/**/**/**/",
+                "${LIBMESH}/include/**/**/",
+                "../../../src/**",
+                "/usr/include/c++/8",
+                "/usr/local/include",
+                "/usr/include/x86_64-linux-gnu/**/**/**/**",
+                "/usr/include",
+                " /usr/include/llvm-8/**",
+                "/usr/include/x86_64-linux-gnu/c++/7/",
+                "/usr/include/c++/7",
+                "${workspaceRoot}"
+            ],
+            "defines": [],
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/clang -g -O0 -w Wno-all -Wno-unused-variable -lboost_system",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "browse": {
+                "path": [
+                    "/usr/bin",
+                    "/usr/local/bin",
+                    "/usr/local/include",
+                    "${HOME}/src/libmesh/libmesh-1.3.0/**",
+                    "${workspaceRoot}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        }
+    ],
+    "version": 4
+}

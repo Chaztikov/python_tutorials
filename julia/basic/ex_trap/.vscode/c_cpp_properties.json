@@ -1,0 +1,39 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "$PWD",
+                "/usr/include/eigen3/",
+                "/usr/include/eigen3/Eigen",
+                "${INCLUDE}",
+                "${LIBMESH}/",
+                "${LIBMESH}/contrib",
+                "${LIBMESH}/contrib/util",
+                "${LIBMESH}/contrib/bin",
+                "${LIBMESH}/**",
+                "${LIBMESH}/contrib/util/**",
+                "${LIBMESH}/include/",
+                "${LIBMESH}/include/**",
+                "${HOME}/src/petsc/petsc-3.9.4/clang-serial-dbg/**",
+                "../../../src/**",
+                "/usr/include/c++/8",
+                "/usr/include/x86_64-linux-gnu/c++/8",
+                "/usr/include/c++/8/backward",
+                "/usr/lib/gcc/x86_64-linux-gnu/8/include",
+                "/usr/local/include",
+                "/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed",
+                "/usr/x86_64-linux-gnu/include",
+                "/usr/include/x86_64-linux-gnu",
+                "/usr/include"               
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
