@@ -24,7 +24,7 @@ df = pd.read_csv('TSLA.csv', parse_dates=True, index_col=0)
 
 
 print(df.head())
-print(df.label)
+print(df.columns)
 print(df[['High','Low']])
 
 
@@ -35,3 +35,13 @@ df['Low'].plot()
 plt.legend()
 plt.show();
 
+
+df['100ma'] = df['Adj Close'].rolling(window=100).mean()
+
+plt.figure()
+df['100ma'].plot()
+df['Adj Close'].plot() 
+df['High'].plot() 
+df['Low'].plot() 
+plt.legend()
+plt.show();
