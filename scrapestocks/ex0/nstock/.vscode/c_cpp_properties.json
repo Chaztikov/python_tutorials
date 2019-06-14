@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include/c++/8",
+                "/usr/include/",
+                "${HOME}/opt/libmesh/opt/",
+                "/usr/include/eigen3/Eigen/Core"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/cc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
