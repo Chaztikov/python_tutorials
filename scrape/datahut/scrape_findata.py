@@ -54,7 +54,7 @@ marketCaps=[]
 totalVolumes=[]
 circulatingSupplys=[]
 
-for i in range(0,2):
+for i in range(0,10):
   CryptoCurrenciesUrl = "https://in.finance.yahoo.com/cryptocurrencies?offset="+str(i)+"&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;count=50"
   r= requests.get(CryptoCurrenciesUrl)
   data=r.text
@@ -103,8 +103,8 @@ for i in range(40, 404, 14):
          changes.append(change.text)
       for percentChange in listing.find_all('td', attrs={'data-reactid':i+7}):
          percentChanges.append(percentChange.text)
-pd.DataFrame({"Names": names, "Prices": prices, "Change": changes, "% Change": percentChanges})
-
+df = pd.DataFrame({"Names": names, "Prices": prices, "Change": changes, "% Change": percentChanges})
+df.to_csv('test1.csv')
 
 # Scraping World Indices
 # The MSCI World is a market cap weighted stock market index of 1,649 stocks from companies throughout the world. The index and their movements give an insight into the general attitude of the investing public towards companies of all sizes and industries.
@@ -138,7 +138,8 @@ for i in range(40, 404, 14):
          for percentChange in srow.find_all('td', attrs={'class':'data-col4'}):
             percentChanges.append(percentChange.text)
  
-pd.DataFrame({"Names": names, "Prices": prices, "Change": changes, "% Change": percentChanges})
+df = pd.DataFrame({"Names": names, "Prices": prices, "Change": changes, "% Change": percentChanges})
+df.to_csv('test1.csv')
 
 
 # Scraping most-active stocks
@@ -177,7 +178,8 @@ for i in range(0,11):
      for circulatingSupply in listing.find_all('td', attrs={'aria-label':'Volume'}):
         circulatingSupplys.append(circulatingSupply.text)
  
-pd.DataFrame({"Names": names, "Prices": prices, "Change": changes, "% Change": percentChanges, "Market Cap": marketCaps, "Average Volume": totalVolumes,"Volume":circulatingSupplys})
+df = pd.DataFrame({"Names": names, "Prices": prices, "Change": changes, "% Change": percentChanges, "Market Cap": marketCaps, "Average Volume": totalVolumes,"Volume":circulatingSupplys})
+df.to_csv('test3.csv')
 
 
 # Scraping commodities
@@ -219,5 +221,6 @@ for i in range(40, 404, 14):
          for openInterest in srow.find_all('td', attrs={'class':'data-col7'}):
             openInterests.append(openInterest.text)
  
-pd.DataFrame({"Names": names, "Prices": prices, "Change": changes, "% Change": percentChanges, "Market Time": marketTimes,'Open Interest': openInterests ,"Volume": totalVolumes})
+df = pd.DataFrame({"Names": names, "Prices": prices, "Change": changes, "% Change": percentChanges, "Market Time": marketTimes,'Open Interest': openInterests ,"Volume": totalVolumes})
+df.to_csv('test4.csv')
 # Also, you can find the snapshot of commodities data collected after scraping yahoo finance below.
